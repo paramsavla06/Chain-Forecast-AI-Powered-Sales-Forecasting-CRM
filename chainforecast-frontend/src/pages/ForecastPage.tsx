@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ForecastChart from "../components/Charts/ForecastChart";
+import ForecastChart from "../components/charts/ForecastChart";
 import type { ForecastPoint } from "../api/forecast";
 import { fetchForecast } from "../api/forecast";
 
