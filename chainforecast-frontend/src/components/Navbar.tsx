@@ -1,30 +1,30 @@
-import { useAuth } from "../auth/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Navbar() {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
-
-  function handleLogout() {
-    logout();
-    navigate("/login");
-  }
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="app-navbar">
-      <div>Dashboard</div>
-      <button
-        onClick={handleLogout}
-        style={{
-          padding: "6px 10px",
-          borderRadius: "4px",
-          border: "1px solid #ddd",
-          background: "white",
-          cursor: "pointer",
-        }}
+    <header className="app-navbar">
+      <div className="nav-title">Dashboard</div>
+
+      <div
+        className="nav-profile"
+        onClick={() => setOpen((prev) => !prev)}
       >
-        Logout
-      </button>
-    </div>
+        <div className="nav-profile-info">
+          <span className="nav-profile-name">Retailer Demo</span>
+          <span className="nav-profile-role">Admin</span>
+        </div>
+        <div className="nav-avatar">RD</div>
+
+        {open && (
+          <div className="nav-dropdown">
+            <button>Profile</button>
+            <button>Settings</button>
+            <button>Logout</button>
+          </div>
+        )}
+      </div>
+    </header>
   );
 }

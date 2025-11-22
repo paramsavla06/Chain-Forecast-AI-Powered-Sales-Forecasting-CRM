@@ -2,22 +2,65 @@ import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
   return (
-    <div className="app-sidebar">
-      <h2>ChainForecast</h2>
-      <nav
-        style={{
-          marginTop: "20px",
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-        }}
-      >
-        <NavLink to="/forecast">📈 Forecast</NavLink>
-        <NavLink to="/crm">👥 CRM</NavLink>
-        <NavLink to="/offers">🎁 Offers</NavLink>
-        <NavLink to="/logs">🧾 Logs</NavLink>
-        <NavLink to="/admin">⚙️ Admin</NavLink>
-      </nav>
-    </div>
+    <aside className="app-sidebar">
+      <div>
+        <div className="sidebar-brand">ChainForecast</div>
+        <div className="sidebar-tagline">AI Sales &amp; CRM Insights</div>
+
+        <nav className="sidebar-nav">
+          <NavLink
+            to="/forecast"
+            className={({ isActive }) =>
+              "sidebar-link" + (isActive ? " active" : "")
+            }
+          >
+            <span className="icon">📊</span>
+            <span>Dashboard</span>
+          </NavLink>
+
+          <NavLink
+            to="/crm"
+            className={({ isActive }) =>
+              "sidebar-link" + (isActive ? " active" : "")
+            }
+          >
+            <span className="icon">👥</span>
+            <span>CRM Rules</span>
+          </NavLink>
+
+          <NavLink
+            to="/offers"
+            className={({ isActive }) =>
+              "sidebar-link" + (isActive ? " active" : "")
+            }
+          >
+            <span className="icon">🎁</span>
+            <span>Offers</span>
+          </NavLink>
+
+          <NavLink
+            to="/logs"
+            className={({ isActive }) =>
+              "sidebar-link" + (isActive ? " active" : "")
+            }
+          >
+            <span className="icon">🧾</span>
+            <span>Logs</span>
+          </NavLink>
+
+          <NavLink
+            to="/admin"
+            className={({ isActive }) =>
+              "sidebar-link" + (isActive ? " active" : "")
+            }
+          >
+            <span className="icon">⚙️</span>
+            <span>Admin</span>
+          </NavLink>
+        </nav>
+      </div>
+
+      <div className="sidebar-footer">© {new Date().getFullYear()} ChainForecast</div>
+    </aside>
   );
 }

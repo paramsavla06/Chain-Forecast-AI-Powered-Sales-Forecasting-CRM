@@ -1,5 +1,4 @@
 import Sidebar from "./Sidebar";
-
 import Navbar from "./Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -8,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Sidebar />
       <div className="app-main">
         <Navbar />
-        <div className="app-page">{children}</div>
+        <main className="app-page">{children}</main>
       </div>
     </div>
   );

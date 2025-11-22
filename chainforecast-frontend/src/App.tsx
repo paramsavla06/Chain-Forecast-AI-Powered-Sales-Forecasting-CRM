@@ -8,7 +8,7 @@ import OffersPage from "./pages/OffersPage";
 import LogsPage from "./pages/LogsPage";
 import AdminPage from "./pages/AdminPage";
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Layout>
@@ -24,5 +24,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
